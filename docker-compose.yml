@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./../VyuhShastra-Backend
+    container_name: vyuhshastra-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=./../VyuhShastra-Backend/app.py  # Update this to the correct path
+    volumes:
+      - ./VyuhShastra-Backend:/app
+    networks:
+      - vyuhshastra-network
+
+  frontend:
+    build:
+      context: ./react-ui
+    container_name: vyuhshastra-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./VyuhShastra-Frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - vyuhshastra-network
+
+networks:
+  vyuhshastra-network:
+    driver: bridge
