@@ -1,0 +1,4 @@
+/* //apply css for index.html page.css will be applied globally... */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
