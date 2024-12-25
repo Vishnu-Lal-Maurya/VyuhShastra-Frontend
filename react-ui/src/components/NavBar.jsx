@@ -20,7 +20,7 @@ const NavBar = () => {
 
   const authLinks = [
     { name: 'Login', path: '/login' },
-    { name: 'Register', path: '/logout' },
+    { name: 'Register', path: '/signup' },
   ];
 
   return (
