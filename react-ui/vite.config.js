@@ -7,11 +7,11 @@ export default defineConfig({
     port: 3000, // Set the desired port
     host: '0.0.0.0', // Ensure the server is accessible externally
     proxy: {
-      '/server': {
-        target: 'http://server:5000',
+      '/backend': {
+        target: 'http://backend:5000',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/server/, ''),
+        rewrite: (path) => path.replace(/^\/backend/, ''),
       },
     },
   },
