@@ -1,5 +1,5 @@
 import About from "./components/About.jsx";
-import HomePage from "./components/HomePage.jsx";
+import HomePage from "./components/Homepage/HomePage.jsx";
 import LogIn from "./components/login.jsx";
 import NavBar from "./components/NavBar.jsx"
 import SignUp from "./components/signup.jsx";
