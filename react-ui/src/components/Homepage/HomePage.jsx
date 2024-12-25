@@ -2,12 +2,10 @@ import Banner from "./Banner"
 import FetchAPI from "../FetchAPI"
 import '../../index.css';
 import KeyFeatures from "./Key_features"
-import Footer from "../footer"
 
 const HomePage = () =>{
     return (
         <>
-        <FetchAPI api = "http://127.0.0.1:5000/"/>
         <Banner/>
         {/* Vision Section */}
         <section className="py-12 bg-gradient-to-r from-purple-50 via-gray-50 to-purple-50">
@@ -19,7 +17,6 @@ const HomePage = () =>{
             </div>
         </section>
         <KeyFeatures />
-        <Footer />
         </>
     )
 }
