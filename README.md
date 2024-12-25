@@ -3,7 +3,9 @@
 
 After Cloning both VyuhShastra-Backend and VyuhShastra-Frontend the file structure will look like this
 
-VyuhShastra/ ├── VyuhShastra-Backend/ # Backend repository ├── VyuhShastra-Frontend/ # Frontend repository └── docker-compose.yml # Docker Compose file to run both
+VyuhShastra/
+├── VyuhShastra-Backend/ # Backend repository 
+├── VyuhShastra-Frontend/ # Frontend repository └── docker-compose.yml # Docker Compose file to run both
 
 
 To run your backend project alone (assuming you're using Docker and Flask based on the structure you've shared), follow these steps:
