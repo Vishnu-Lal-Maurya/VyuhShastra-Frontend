@@ -1,5 +1,6 @@
 import AllWorkspace from "./components/Workspace/AllWorkspace.jsx";
 import About from "./components/About.jsx";
+import Contact from "./components/contact.jsx";
 import Footer from "./components/Footer.jsx";
 import HomePage from "./components/Homepage/HomePage.jsx";
 import LogIn from "./components/login.jsx";
@@ -20,7 +21,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
             <Route path="/workspaces"  element={<AllWorkspace/>} />
