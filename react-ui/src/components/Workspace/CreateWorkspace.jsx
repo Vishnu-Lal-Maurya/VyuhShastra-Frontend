@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createWorkspace } from '../../API/workspace';
 import './CreateWorkspace.scss';
 import { ToastContainer, toast } from 'react-toastify';
+import axiosInstance from '../../API/axiosInstance';
 
 
 const CreateWorkspace = ({ reloadParent }) => {
@@ -38,38 +39,37 @@ const CreateWorkspace = ({ reloadParent }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
+    e.preventDefault(); // Prevent default form submission behavior
+  
     const workspaceData = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
       workspaceData.append(key, value);
     });
-
-   console.log('FormData Contents:');
-   for (const [key, value] of workspaceData.entries()) {
-   console.log(`${key}:`, value);
-   }
-
-   console.log(workspaceData.image);
+  
+    console.log('FormData Contents:');
+    for (const [key, value] of workspaceData.entries()) {
+      console.log(`${key}:`, value);
+    }
+  
     const response = await createWorkspace(workspaceData);
-
-
-
+  
     if (response) {
-      
+      // Reset form fields
       setFormData({
         title: '',
         description: '',
         image: null,
         datafile: null,
       });
-      toggleForm();
-      toast.success('Workspace created successfully!')
-      reloadParent();
+  
+      toggleForm(); // Close the form
+      toast.success('Workspace created successfully!');
+      reloadParent(); // Update the parent UI, ensure this doesn't trigger a page reload
     } else {
       toast.error('Error creating workspace!');
     }
   };
+  
 
   return (
 

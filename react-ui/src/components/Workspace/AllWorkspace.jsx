@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllWorkspace } from '../../API/workspace';
+import { deleteWorkspace, getAllWorkspace } from '../../API/workspace';
 import WorkspaceCard from './WorkspaceCard';
 import './AllWorkspace.css';
 import CreateWorkspace from './CreateWorkspace';
@@ -29,6 +29,26 @@ const AllWorkspace = () => {
     setReload((prevReload) => !prevReload); // Toggle reload state
   };
 
+
+  const onDelete = async (id) => {
+    const workspaceToDelete = workspaces.find((w) => w.id === id);
+    const success = await deleteWorkspace(id);
+    if(success){
+      // setWorkspaces(prevWorkspaces => {
+      //   prevWorkspaces.filter((workspace) => workspace.id !== id)
+        toast.success(`Workspace "${workspaceToDelete.name}" has been deleted successfully.`);
+        reloadParent()
+      
+    } else{
+      toast.error(`Failed to delete workspace "${workspaceToDelete.name}".`);
+      reloadParent()
+
+    }
+
+  }
+
+
+
   return (
     <div className="workspace-container">
       <ToastContainer /> {/* Add ToastContainer for toast messages */}
@@ -39,7 +59,7 @@ const AllWorkspace = () => {
       <div className="workspace-grid">
         {Array.isArray(workspaces) && workspaces.length > 0 ? (
           workspaces.map((workspace) => (
-            <WorkspaceCard key={workspace.id} workspace={workspace} />
+            <WorkspaceCard key={workspace.id} workspace={workspace} onDelete={onDelete}/>
           ))
         ) : (
           <div className="no-workspaces">
