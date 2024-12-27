@@ -1,3 +1,4 @@
+import AllWorkspace from "./components/Workspace/AllWorkspace.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -6,6 +7,9 @@ import LogIn from "./components/login.jsx";
 import NavBar from "./components/NavBar.jsx";
 import SignUp from "./components/signup.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateWorkspace from "./components/Workspace/CreateWorkspace.jsx";
+import WorkspaceDetails from "./components/Workspace/WorkspaceDetails.jsx";
+
 
 const App = () => {
   return (
@@ -20,6 +24,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
+            <Route path="/workspaces"  element={<AllWorkspace/>} />
+            <Route path="/workspace/create" element={<CreateWorkspace/>} />
+            <Route path="/workspace/:workspaceId" element={<WorkspaceDetails/>} />
         </Routes>
         <Footer />
       </div>
