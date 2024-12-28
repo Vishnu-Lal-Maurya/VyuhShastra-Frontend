@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: '/backend/', // Flask API base URL
+
+  baseURL: import.meta.env.VITE_BACKEND_URL, // Flask API base URL
   headers: {
     'Content-Type': 'application/json',
   },

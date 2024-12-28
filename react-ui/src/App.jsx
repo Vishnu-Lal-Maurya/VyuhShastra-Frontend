@@ -13,6 +13,8 @@ import Datagrid from "./components/Workspace/Datagrid.jsx";
 
 
 const App = () => {
+  // console.log('Backend URL:', process.env.VITE_BACKEND_URL);
+
   return (
     <Router>
       <div
