@@ -72,3 +72,12 @@ export const getImage = async (image) => {
   }
 }
 
+
+export const getDatagridDetails = async (workspaceId,fileId) => {
+  try{
+    const respons = await axiosInstance.get(`/workspace/${workspaceId}/file/${fileId}/datagrid`)
+  }catch(error){
+    console.log("Error fetching datagridDetails",error);
+    return null;
+  }
+}

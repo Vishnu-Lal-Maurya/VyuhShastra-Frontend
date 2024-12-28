@@ -15,13 +15,15 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.3.0",
     "@mui/material": "^6.3.0",
+    "@mui/x-data-grid": "^7.23.3",
     "axios": "^1.7.9",
-    "coreui": "^0.4.2-alpha2",
+    "dotenv": "^16.4.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.0",
     "react-toastify": "^11.0.2",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
