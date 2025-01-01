@@ -55,7 +55,7 @@ const WorkspaceDetails = () => {
                   <tr key={file.id} className="border-b hover:bg-gray-50">
                     <td className="py-3 px-4">{file.filename}</td>
                     <td className="py-3 px-4">
-                      <Link to={`/datagrid/${file.id}`}>
+                      <Link to={`/workspace/${workspace.id}/file/${file.id}/datagrid`}>
                         <button className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500">
                           View
                         </button>
