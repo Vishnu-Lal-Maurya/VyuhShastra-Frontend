@@ -80,7 +80,7 @@ const Datagrid = () => {
       display: 'flex', 
       flexDirection: 'row', 
       alignItems: 'center',
-      background: 'linear-gradient(135deg, rgba(178, 221, 215, 0.8) 0%, rgba(253, 253, 253, 0.8) 100%)', 
+      background: 'linear-gradient(135deg, rgba(178, 220, 215, 0.8) 0%, rgba(253, 253, 253, 0.8) 100%)', 
       height: '100vh',
       padding: '20px'
     }}>
